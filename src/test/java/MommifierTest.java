@@ -6,11 +6,11 @@ public class MommifierTest {
     @Test
     void should_return_new_string_insert_mommy_when_number_of_vowels_more_than_30_percent_in_string() {
 
-        Mommifier mommifer = new Mommifier();
+        Mommifier mommifier = new Mommifier();
 
         String vowelsMoreThan30Percent = "keep";
 
-        String result = mommifer.convert(vowelsMoreThan30Percent);
+        String result = mommifier.convert(vowelsMoreThan30Percent);
 
         assertEquals("kemommyep", result);
     }
