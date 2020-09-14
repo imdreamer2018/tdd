@@ -9,18 +9,18 @@ public class Mommifier {
 
         StringBuilder stringBuilder = new StringBuilder(string);
 
-        int vowelsCount = 0;
-        int vowelsBegin = 0;
+        int currentVowelsCount = 0;
+        int currentVowelsBeginIndex = 0;
 
         for (int i = 0; i < stringBuilder.length(); i++) {
-            if (judgeIsContinuousVowel(stringBuilder, vowelsBegin, i)) {
-                vowelsCount++;
+            if (judgeIsContinuousVowel(stringBuilder, currentVowelsBeginIndex, i)) {
+                currentVowelsCount++;
             } else {
-                vowelsCount = 0;
-                vowelsBegin = i + 1;
+                currentVowelsCount = 0;
+                currentVowelsBeginIndex = i + 1;
             }
-            if (vowelsCount * 10 > stringBuilder.length() * 3) {
-                return stringBuilder.insert(vowelsBegin + 1, "mommy").toString();
+            if (currentVowelsCount * 10 > stringBuilder.length() * 3) {
+                return stringBuilder.insert(currentVowelsBeginIndex + 1, "mommy").toString();
             }
         }
         return string;
